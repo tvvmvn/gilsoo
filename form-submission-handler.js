@@ -1,4 +1,6 @@
 (function() {
+  
+
   // get all data in form and return object
   function getFormData(form) {
     var elements = form.elements;
@@ -50,6 +52,7 @@
     return {data: formData, honeypot: honeypot};
   }
 
+
   function handleFormSubmit(event) {  // handles form submit without any jquery
     event.preventDefault();           // we are submitting via xhr below
     var form = event.target;
@@ -87,6 +90,7 @@
     xhr.send(encoded);
   }
   
+
   function loaded() {
     // bind to the submit event of our form
     var forms = document.querySelectorAll("form.gform");
@@ -96,10 +100,13 @@
   };
   document.addEventListener("DOMContentLoaded", loaded, false);
 
+
   function disableAllButtons(form) {
     var buttons = form.querySelectorAll("button");
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].disabled = true;
     }
   }
+
+  
 })();
